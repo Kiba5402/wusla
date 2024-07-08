@@ -28,6 +28,7 @@ export default defineConfig({
 
   site: 'https://kiba5402.github.io',
   base: '/wusla/',
+  outDir: 'dist',
 
   output: 'static',
 
