@@ -25,6 +25,10 @@ const whenExternalScripts = (items = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
+
+  site: 'https://Kiba5402.github.io',
+  base: 'wusla',
+
   output: 'static',
 
   integrations: [
@@ -37,6 +41,10 @@ export default defineConfig({
       include: {
         tabler: ['*'],
         'flat-color-icons': [
+          'globe',
+          'command-line',
+          'electronics',
+          'laptop-computer',
           'template',
           'gallery',
           'approval',
