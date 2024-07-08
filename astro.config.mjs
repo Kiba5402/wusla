@@ -27,7 +27,7 @@ const whenExternalScripts = (items = []) =>
 export default defineConfig({
 
   site: 'https://kiba5402.github.io',
-  base: '/wusla/',
+  base: '/wusla',
   output: 'static',
 
   integrations: [
