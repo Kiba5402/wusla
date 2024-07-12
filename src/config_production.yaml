@@ -1,7 +1,7 @@
 site:
   name: W2M
   site: 'https://www.wusla.com'
-  base: '/'
+  base: '/wusla'
   trailingSlash: false
 
   googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
