@@ -26,8 +26,7 @@ const whenExternalScripts = (items = []) =>
 
 export default defineConfig({
 
-  site: 'https://kiba5402.github.io',
-  base: '/wusla/',
+  site: 'https://kiba5402.github.io'
 
   integrations: [
     tailwind({
