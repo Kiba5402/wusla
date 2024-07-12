@@ -4,18 +4,18 @@ export const headerData = {
   links: [
     {
       text: 'Inicio',
-      href: '#',
+      href: '/wusla',
     },
     {
       text: 'Nosotros',
-      href: getPermalink('/#features'),
+      href: getPermalink('/about'),
     },
     {
       text: 'Servicios',
       links: [
         {
           text: 'SIM Card Multioeprador',
-          href: getPermalink('/services'),
+          href: getPermalink('/pricing'),
         },
         {
           text: 'Tracker mas Conectividad',
@@ -23,17 +23,17 @@ export const headerData = {
         },
         {
           text: 'Plataforma',
-          href: getPermalink('/about'),
+          href: getPermalink('/pricing'),
         },
         {
           text: 'Insumos',
-          href: getPermalink('/contact'),
+          href: getPermalink('/pricing'),
         }
       ],
     },
     {
-      text: 'Información',
-      href: getPermalink('/#features'),
+      text: 'Contacto',
+      href: getPermalink('/contact'),
     }
   ],
   actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
@@ -44,23 +44,23 @@ export const footerData = {
     {
       title: 'Nosotros',
       links: [
-        { text: 'Misión', href: '#' },
-        { text: 'Visión', href: '#' },
+        { text: 'Misión', href: getPermalink('/about') },
+        { text: 'Visión', href: getPermalink('/about') },
       ],
     },
     {
       title: 'Servicios',
       links: [
-        { text: 'SIM Card Multioeprador', href: '#' },
-        { text: 'Tracker mas Conectividad', href: '#' },
-        { text: 'Plataforma', href: '#' },
-        { text: 'Insumos', href: '#' }
+        { text: 'SIM Card Multioeprador', href: getPermalink('/pricing') },
+        { text: 'Tracker mas Conectividad', href: getPermalink('/pricing') },
+        { text: 'Plataforma', href: getPermalink('/pricing') },
+        { text: 'Insumos', href: getPermalink('/pricing') }
       ],
     },
     {
       title: 'Contactanos',
       links: [
-        { text: 'Whatsapp', href: '#' }
+        { text: 'contacto', href: getPermalink('/contact') }
       ],
     }
   ],
@@ -72,7 +72,7 @@ export const footerData = {
     { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: '#' }
   ],
   footNote: `
-    <img class="w-7 h-5 md:w-8 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="./src/assets/favicons/icon2.png" alt="Wusla logo" loading="lazy"></img>
+    <img class="w-7 h-5 md:w-8 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="${getPermalink('/src/assets/favicons/icon2.png')}" alt="Wusla logo" loading="lazy"></img>
      <span class="text-muted"> Wusla. Todos los derechos reservados. </span>
   `,
 };
