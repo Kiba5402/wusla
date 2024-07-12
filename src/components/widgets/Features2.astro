@@ -14,9 +14,10 @@ const {
 
   id,
   isDark = false,
-  classes = {},
+  classes = { container: '2xl:mt:0 xl:mt:0 lg:mt-0 md:mt-0 sm:mt-36' },
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
