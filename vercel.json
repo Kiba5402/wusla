@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/_astro/(.*)",
+      "source": "/_astro/wusla/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

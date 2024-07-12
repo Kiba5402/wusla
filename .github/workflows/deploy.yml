@@ -20,7 +20,6 @@ jobs:
     steps:
       - name: Modify file
         #run: sed -i 's,base:'/',base:'wusla',g' < config.yaml
-        run: ls
       - name: Checkout your repository using git
         uses: actions/checkout@v4
       - name: Install, build, and upload your site output
