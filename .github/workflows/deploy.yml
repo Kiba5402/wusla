@@ -16,8 +16,6 @@ permissions:
 
 jobs:
   build:
-    env:
-      MODE: production
     runs-on: ubuntu-latest
     steps:
       #- name: Modify file
