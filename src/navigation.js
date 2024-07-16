@@ -14,20 +14,8 @@ export const headerData = {
       text: 'Servicios',
       links: [
         {
-          text: 'SIM Card Multioeprador',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'Tracker mas Conectividad',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'Plataforma',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'Insumos',
-          href: getPermalink('/pricing'),
+          text: 'SIM Multi-Operador',
+          href: getPermalink('/simMulti'),
         }
       ],
     },
@@ -51,10 +39,7 @@ export const footerData = {
     {
       title: 'Servicios',
       links: [
-        { text: 'SIM Card Multioeprador', href: getPermalink('/pricing') },
-        { text: 'Tracker mas Conectividad', href: getPermalink('/pricing') },
-        { text: 'Plataforma', href: getPermalink('/pricing') },
-        { text: 'Insumos', href: getPermalink('/pricing') }
+        { text: 'SIM Card Multioeprador', href: getPermalink('/simMulti') }
       ],
     },
     {

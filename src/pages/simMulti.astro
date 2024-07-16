@@ -1,0 +1,126 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Sim Multi',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Sim Multi"
+    title="Sim Multi-Operador"
+    subtitle="Nuestras tarjetas SIM multioperador conectan sus dispositivos a más de 540 redes en más de 180 países. Obtenga cobertura redundante en la mayoría de los países y selección inteligente de redes para optimizar su conectividad IoT por costo o servicio."
+  />
+
+  <!-- Pricing Widget ******************* -->
+
+  <Prices
+    title="Nuestras tarjetas SIM"
+    prices={[
+      {
+        title: 'SIM M2M/IoT',
+        subtitle: 'Con la mejor cobertura en redes locales.',
+        price: 29,
+        period: 'per month',
+        items: [
+          {
+            description: 'Cumple con la regulación local.',
+          },
+          {
+            description: 'Mejora de latencia.',
+          },
+          {
+            description: 'Cobertura en redes locales.',
+          }
+        ]
+      },
+      {
+        title: 'SIM Multi-Carrier Nacional',
+        subtitle: 'SIM con red de backup.',
+        price: 69,
+        period: 'Per Month',
+        items: [
+          {
+            description: 'Red local como primera opción',
+          },
+          {
+            description: 'BackUp de Roaming Internacional',
+          },
+          {
+            description: 'Recuperación de incidencias',
+          }
+        ],
+        hasRibbon: false,
+        ribbonTitle: 'popular',
+      },
+      {
+        title: 'SIM Multi-Carrier Global',
+        subtitle: 'Más de 300 operadores por todo el Mundo',
+        price: 199,
+        period: 'Per Month',
+        items: [
+          {
+            description: 'Conectividad en mas de 130 paises',
+          },
+          {
+            description: 'Convenio con mas de 300 Operadores',
+          },
+          {
+            description: 'Conectividad global 2G, 3G y 4G',
+          },
+        ],
+      },
+    ]}
+  />
+
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Industrias"
+    isReversed={true}
+    items={[
+      {
+        title: 'GPS',
+        icon: 'tabler:gps',
+      },
+      {
+        title: 'Utilities',
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'Vending',
+        icon: 'tabler:candy',
+      },
+      {
+        title: 'Wearables',
+        icon: 'tabler:device-watch',
+      },
+      {
+        title: 'Push To Talk',
+        icon: 'tabler:device-mobile-vibration',
+      },
+      {
+        title: 'Control de flotas',
+        icon: 'tabler:truck-delivery',
+      },
+      {
+        title: 'Seguridad Privada',
+        icon: 'tabler:shield-check',
+      }
+    ]}
+    image={{
+      src: '~/assets/images/iot1.jpg',
+      alt: 'Steps image',
+    }}
+  />
+</Layout>
