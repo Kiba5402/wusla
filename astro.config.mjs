@@ -9,6 +9,7 @@ import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
+import node from "@astrojs/node";
 
 import astrowind from './vendor/integration';
 
@@ -28,6 +29,10 @@ export default defineConfig({
 
   site: 'https://kiba5402.github.io',
   base: '',
+  output: 'server',
+  adapter: node({
+    mode: "standalone"
+  }),
 
   integrations: [
     tailwind({

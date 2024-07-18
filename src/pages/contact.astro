@@ -5,7 +5,7 @@ import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: 'Contactanos',
 };
 ---
 
@@ -41,3 +41,35 @@ const metadata = {
   />
 
 </Layout>
+
+
+<script>
+  const form = document.getElementById('contacUsForm') as HTMLFormElement;
+  // event listeners
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    sendmail(formData);
+  });
+
+  const sendmail = async (formData) => {
+    const data = await fetch('./api/sendmail.json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(Object.fromEntries(formData)),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(res.status);
+        }
+        return res.json();
+      })
+      .catch((err) => {
+        console.log('Error', err);
+        throw new Error('Network error.');
+      });
+    console.log(data); // Here is the response from backend
+  };
+</script>
