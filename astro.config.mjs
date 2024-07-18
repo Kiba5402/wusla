@@ -29,6 +29,10 @@ export default defineConfig({
 
   site: 'https://kiba5402.github.io',
   base: '',
+  output: 'server',
+  adapter: node({
+    mode: "middleware"
+  }),
 
   integrations: [
     tailwind({
