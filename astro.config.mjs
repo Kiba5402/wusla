@@ -14,7 +14,8 @@ import netlify from "@astrojs/netlify";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const hasExternalScripts = false;
 const whenExternalScripts = (items = []) => hasExternalScripts ? Array.isArray(items) ? items.map(item => item()) : [items()] : [];
-
+//formcontacto@wuslam2m.com
+//CtNU?,v1KT%J
 // https://astro.build/config
 export default defineConfig({
   site: 'https://kiba5402.github.io',

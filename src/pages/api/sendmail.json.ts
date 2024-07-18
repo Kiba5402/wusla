@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro'
 import nodemailer from 'nodemailer'
 
+
 const emailTo = "mizlagata5402@gmail.com"
 const emailToPass = "Bd6ed70cba00c!"
 const host = "smtp.gmail.com"
@@ -24,13 +25,16 @@ export const POST: APIRoute = async ({ request }) => {
       '<br>'
     )}</div>`
 
+    //formcontacto@wuslam2m.com
+  //CtNU?,v1KT%J
+
     // sendmail
     let mailTransporter = nodemailer.createTransport({
-      host: 'smtp.ethereal.email',
-      port: 587,
+      host: 'mail.wuslam2m.com',
+      port: 465,
       auth: {
-          user: 'dwight.purdy@ethereal.email',
-          pass: 'D8pq2fEegycRP5P6bX'
+          user: 'formcontacto@wuslam2m.com',
+          pass: 'CtNU?,v1KT%J'
       }
     })
 
@@ -45,8 +49,8 @@ export const POST: APIRoute = async ({ request }) => {
     let mailresult
     try {
       mailresult = await mailTransporter.sendMail({
-        from: '"Maddison Foo Koch 👻" <maddison53@ethereal.email>', // sender address
-        to: "cristian5402@gmail.com", // list of receivers
+        from: '"Contacto por pagina" <formcontacto@wuslam2m.com>', // sender address
+        to: "formcontacto@wuslam2m.com", // list of receivers
         subject: "Hello ✔", // Subject line
         text: "Hello world?", // plain text body
         html: "<b>Hello world?</b>", // html body
