@@ -4,7 +4,7 @@ export const headerData = {
   links: [
     {
       text: 'Inicio',
-      href: '/wusla',
+      href: '/',
     },
     {
       text: 'Nosotros',

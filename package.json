@@ -17,6 +17,7 @@
     "lint:eslint": "eslint ."
   },
   "dependencies": {
+    "@astrojs/netlify": "^5.4.0",
     "@astrojs/node": "^8.3.2",
     "@astrojs/rss": "^4.0.6",
     "@astrojs/sitemap": "^3.1.6",
