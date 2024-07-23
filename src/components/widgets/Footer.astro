@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 import { SITE } from 'astrowind:config';
 import { getHomePermalink } from '~/utils/permalinks';
+import baseLogo from '../../assets/favicons/icon2.png';
 
 interface Link {
   text?: string;
@@ -95,6 +96,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
         )
       }
       <div class="text-sm mr-4 dark:text-muted">
+        <Image src={baseLogo} alt="Logo Wusla" width="180" class="w-7 h-5 md:w-8 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm"/>
         <Fragment set:html={footNote} />
       </div>
     </div>
