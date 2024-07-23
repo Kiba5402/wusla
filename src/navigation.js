@@ -39,13 +39,13 @@ export const footerData = {
     {
       title: 'Servicios',
       links: [
-        { text: 'SIM Card Multioeprador', href: getPermalink('/simMulti') }
+        { text: 'SIM Card Multi operador', href: getPermalink('/simMulti') }
       ],
     },
     {
-      title: 'Contactanos',
+      title: 'Contáctanos',
       links: [
-        { text: 'contacto', href: getPermalink('/contact') }
+        { text: 'Contacto', href: getPermalink('/contact') }
       ],
     }
   ],
@@ -54,7 +54,7 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/wusla-m2m/' }
+    { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/wusla-m2m/', target: '_blank' }
   ],
   footNote: `
      <span class="text-muted"> Wusla. Todos los derechos reservados. </span>
