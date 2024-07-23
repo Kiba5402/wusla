@@ -54,7 +54,7 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: '#' }
+    { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/wusla-m2m/' }
   ],
   footNote: `
      <span class="text-muted"> Wusla. Todos los derechos reservados. </span>
