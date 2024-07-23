@@ -57,7 +57,7 @@ export const footerData = {
     { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: '#' }
   ],
   footNote: `
-    <img class="w-7 h-5 md:w-8 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="${'./src/assets/favicons/icon2.png'}" alt="Wusla logo" loading="lazy"></img>
+    <img class="w-7 h-5 md:w-8 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="./src/assets/favicons/icon2.png" alt="Wusla logo" loading="lazy"></img>
      <span class="text-muted"> Wusla. Todos los derechos reservados. </span>
   `,
 };
