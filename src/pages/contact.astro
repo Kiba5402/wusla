@@ -90,17 +90,14 @@ const metadata = {
 
 <script type="module">
   const form = document.getElementById('contacUsForm');
-  console.log(form);
   // event listeners
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
-    console.log('desde el form', formData);
     sendmail(formData, form);
   });
 
   const sendmail = async (formData, form) => {
-    console.log('desde el form', JSON.stringify(Object.fromEntries(formData)));
     showLoading();
     const data = await fetch('./api/sendmail.json', {
       method: 'POST',
@@ -122,7 +119,6 @@ const metadata = {
         console.log('Error', err);
         throw new Error('Network error.');
       });
-    console.log(data); // Here is the response from backend
   };
 
   function showLoading() {

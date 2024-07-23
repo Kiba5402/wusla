@@ -9,12 +9,13 @@ import Features2 from '~/components/widgets/Features2.astro';
 const metadata = {
   title: 'WuslaM2M',
   ignoreTitleTemplate: true,
+  isProd: import.meta.env.PRUEBA
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
+  
   <Hero image={{ src: '~/assets/images/Sim1.jpg', alt: 'AstroWind Hero Image' }}>
     <Fragment slot="title"> Juntos uniendo el mundo</Fragment>
 

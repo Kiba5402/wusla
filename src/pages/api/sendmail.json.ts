@@ -28,8 +28,8 @@ export const POST: APIRoute = async ({ request }) => {
       host: 'mail.wuslam2m.com',
       port: 465,
       auth: {
-        user: 'formcontacto@wuslam2m.com',
-        pass: 'CtNU?,v1KT%J'
+        user: import.meta.env.MAIL_USER,
+        pass: import.meta.env.MAIL_PASS 
       }
     })
 
@@ -47,8 +47,6 @@ export const POST: APIRoute = async ({ request }) => {
     } catch (error) {
       console.log('******* Error: ', error)
     }
-    console.log('Message sent: %s', mailresult?.messageId)
-
     // return endpoint response
     return new Response(JSON.stringify({ 'Message sent: %s': mailresult?.messageId }), {
       status: 200,
