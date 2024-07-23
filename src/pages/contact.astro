@@ -2,7 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'Contactanos',
@@ -10,24 +10,48 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <!-- Pantalla de carga (se oculta por defecto) -->
+  <div id="loading-overlay" class="loading-overlay hidden">
+    <div class="flex hidden" id="loading">
+      <span>Enviando</span>
+      <svg class="animate-spin mr-3 h-5 w-5 text-white mx-1" viewBox="0 0 24 24">
+        <circle class="opacity-0" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path
+          class=""
+          fill="#6d28d9"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        ></path>
+      </svg>
+    </div>
+    <div class="flex hidden" id="loaded">
+      <span>Enviado</span>
+      <Icon name="tabler:check" class="w-6 h-6 inline-block -mt-0.5" />
+    </div>
+  </div>
+
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
-
+  <HeroText tagline="Contacto" title="¡Conectémonos!" />
   <ContactUs
     id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    formId="contacUsForm"
+    title="¡Envíanos un mensaje!"
+    subtitle="Nuestro equipo de soporte estará encantado de ayudarle."
     inputs={[
       {
         type: 'text',
         name: 'name',
-        label: 'Name',
+        label: 'Nombre',
       },
       {
         type: 'email',
         name: 'email',
-        label: 'Email',
+        label: 'Correo',
+      },
+      {
+        type: 'number',
+        name: 'phone',
+        label: 'Telefono',
       },
     ]}
     textarea={{
@@ -35,24 +59,49 @@ const metadata = {
     }}
     disclaimer={{
       label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+        'Al enviar este formulario de contacto, usted reconoce y acepta la recopilación de su información personal.',
     }}
-    description="Our support team typically responds within 24 business hours."
+    description="Nuestro equipo de soporte normalmente responde dentro de las 24 horas hábiles."
   />
-
 </Layout>
 
+<style>
+  /* Estilos para la pantalla de carga */
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 2s ease; /* Transición para el efecto fade */
+  }
 
-<script>
-  const form = document.getElementById('contacUsForm') as HTMLFormElement;
+  .hidden {
+    opacity: 0; /* Oculto cuando se agrega la clase .hidden */
+    pointer-events: none; /* Evita la interacción mientras está oculto */
+  }
+</style>
+
+<script type="module">
+  const form = document.getElementById('contacUsForm');
+  console.log(form);
   // event listeners
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
-    sendmail(formData);
+    console.log('desde el form', formData);
+    sendmail(formData, form);
   });
 
-  const sendmail = async (formData) => {
+  const sendmail = async (formData, form) => {
+    console.log('desde el form', JSON.stringify(Object.fromEntries(formData)));
+    showLoading();
     const data = await fetch('./api/sendmail.json', {
       method: 'POST',
       headers: {
@@ -61,15 +110,42 @@ const metadata = {
       body: JSON.stringify(Object.fromEntries(formData)),
     })
       .then((res) => {
+        hideLoading();
+        form.reset();
         if (!res.ok) {
           throw new Error(res.status);
         }
         return res.json();
       })
       .catch((err) => {
+        hideLoading();
         console.log('Error', err);
         throw new Error('Network error.');
       });
     console.log(data); // Here is the response from backend
   };
+
+  function showLoading() {
+    const overlay = document.getElementById('loading-overlay');
+    overlay.classList.remove('hidden');
+    const overlaLoading = document.getElementById('loading');
+    overlaLoading.classList.remove('hidden');
+    overlay.style.display = 'flex'; // Asegurarse de que el overlay sea visible
+  }
+
+  function hideLoading() {
+    const overlaLoading = document.getElementById('loading');
+    overlaLoading.classList.add('hidden');
+
+    const overlayLoaded = document.getElementById('loaded');
+    overlayLoaded.classList.remove('hidden');
+
+    const overlay = document.getElementById('loading-overlay');
+    overlay.classList.add('hidden');
+
+    setTimeout(() => {
+      overlayLoaded.classList.add('hidden');
+      overlay.style.display = 'none'; // Ocultar el overlay después de la transición
+    }, 2000); // Debe coincidir con la duración de la transición en CSS
+  }
 </script>
