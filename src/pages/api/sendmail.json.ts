@@ -25,7 +25,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     // sendmail
     let mailTransporter = nodemailer.createTransport({
-      host: 'mail.wuslam2m.com',
+      host:  import.meta.env.MAIL_HOST,
       port: 465,
       auth: {
         user: import.meta.env.MAIL_USER,
